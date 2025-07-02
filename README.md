@@ -1,0 +1,1 @@
+StudyTrack ist eine Android-App, die Lernzeiten speichert und grafisch auswertet. Nutzer starten einen Timer, erhalten bei Ablauf ein Vibrations- und Tonsignal und sehen ihren Fortschritt in einem Diagramm
