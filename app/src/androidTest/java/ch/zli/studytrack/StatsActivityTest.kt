@@ -1,5 +1,6 @@
 package ch.zli.studytrack
 
+import androidx.test.core.app.ActivityScenario
 import androidx.test.espresso.Espresso.*
 import androidx.test.espresso.action.ViewActions.*
 import androidx.test.espresso.assertion.ViewAssertions.*
@@ -15,19 +16,24 @@ class StatsActivityTest {
 
     @Test
     fun showTodayStats_displaysCorrectly() {
-        onView(withId(R.id.toggleView)).perform(click()) // sicherstellen dass auf „Heute“ steht
+        onView(withId(R.id.toggleView)).perform(click())
         onView(withId(R.id.todayStats)).check(matches(isDisplayed()))
     }
 
     @Test
     fun showWeeklyStats_displaysCorrectly() {
-        onView(withId(R.id.toggleView)).perform(click()) // auf Wochenübersicht schalten
+        onView(withId(R.id.toggleView)).perform(click())
         onView(withId(R.id.barChart)).check(matches(isDisplayed()))
     }
 
     @Test
     fun backButton_returnsToMainActivity() {
+        ActivityScenario.launch(MainActivity::class.java)
+
+        onView(withId(R.id.statsButton)).perform(click())
+
         onView(withId(R.id.backButton)).perform(click())
+
         onView(withId(R.id.startStopButton)).check(matches(isDisplayed()))
     }
 }

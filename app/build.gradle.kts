@@ -52,4 +52,5 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
     implementation("com.github.PhilJay:MPAndroidChart:v3.1.0")
     androidTestImplementation("com.google.truth:truth:1.4.2")
+    androidTestImplementation("androidx.test:core:1.5.0")
 }
